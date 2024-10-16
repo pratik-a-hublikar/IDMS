@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "d81a5e32-7b7c-48ae-ae0f-1cb9001de684",
+		"name": "IDMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38510120"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"DriveSoft@@!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/public/auth/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"auth",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Data from IDMS and store it in the system ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJ1c2VyTmFtZSI6ImFkbWluIiwic3ViIjoiTE9HSU5fVE9LRU4iLCJqdGkiOiIyYjczNDk2ZC04ZTE0LTQ3YWItYjQzMy03MGFjODMxNzlmMmIiLCJpYXQiOjE3MjkwODE1OTgsImV4cCI6MTcyOTA4MTg5OH0.nM7zPDjxHEBH9uOtwbPIISFhaYltZPCXBDHJROsceFeJ0qyhIpC8rExYbm670YsW",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/idms/loadIDMSData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"idms",
+						"loadIDMSData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Data from the system",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJ1c2VyTmFtZSI6ImFkbWluIiwic3ViIjoiTE9HSU5fVE9LRU4iLCJqdGkiOiIyYjczNDk2ZC04ZTE0LTQ3YWItYjQzMy03MGFjODMxNzlmMmIiLCJpYXQiOjE3MjkwODE1OTgsImV4cCI6MTcyOTA4MTg5OH0.nM7zPDjxHEBH9uOtwbPIISFhaYltZPCXBDHJROsceFeJ0qyhIpC8rExYbm670YsW",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"acctIdList\":[],\r\n    \"acctType\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/idms/getData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"idms",
+						"getData"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
